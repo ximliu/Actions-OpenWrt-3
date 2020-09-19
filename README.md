@@ -1,6 +1,6 @@
 # Actions-OpenWrt 
 
-[[启动方式](https://github.com/danshui-git/shuoming/blob/master/%E6%89%8B%E5%8A%A8%E5%BC%80%E5%A7%8B.md)]
+- [[启动方式](https://github.com/danshui-git/shuoming/blob/master/%E6%89%8B%E5%8A%A8%E5%BC%80%E5%A7%8B.md)]
 
 
 #
