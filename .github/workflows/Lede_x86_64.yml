@@ -7,7 +7,7 @@
 #
 
 
-name: 编译OpenWrt固件
+name: 编译Lede_x86_64固件
 
 on:
   workflow_dispatch:
@@ -51,7 +51,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [Lienol_x86_64]  #[Lede_x86_64,Lienol_x86_64,Project_x86_64]
+        target: [Lede_x86_64]  #[Lede_x86_64,Lienol_x86_64,Project_x86_64]
 
     steps:
     - name: 准备结束
