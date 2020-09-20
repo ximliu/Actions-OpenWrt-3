@@ -98,9 +98,13 @@ jobs:
     - name: 下载固件源码
       working-directory: /workdir
       run: |
-        df -hT $PWD
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        curl -fsSL  https://raw.githubusercontent.com/coolsnowwolf/lede/master/feeds.conf.default > build/${{matrix.target}}/feeds.conf
+        if [ -f "build/${{matrix.target}}/feeds.conf" ]; then
+        (
+          mv build/${{matrix.target}}/feeds.conf openwrt/
+        )
+        fi
 
     - name: 加载源,patch补丁和自定义设置
       run: |
@@ -118,9 +122,6 @@ jobs:
           /bin/bash "build/${{matrix.target}}/$DIY_P1_SH"
         )
         fi
-        ./scripts/feeds clean
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
         if [ -n "$(ls -A "build/${{matrix.target}}/files" 2>/dev/null)" ]; then
          cp -rf build/${{matrix.target}}/files files
         fi
