@@ -99,11 +99,9 @@ jobs:
       working-directory: /workdir
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        if [ -f "feeds.conf.default" ]; then
-        (
-          mv feeds.conf.default openwrt/
-        )
-        fi
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        cd openwrt
+          mv feeds.conf.default
 
     - name: 加载源,patch补丁和自定义设置
       run: |
