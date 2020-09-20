@@ -99,10 +99,9 @@ jobs:
       working-directory: /workdir
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-        curl -fsSL  https://raw.githubusercontent.com/coolsnowwolf/lede/master/feeds.conf.default > build/${{matrix.target}}/feeds.conf
-        if [ -f "build/${{matrix.target}}/feeds.conf" ]; then
+        if [ -f "feeds.conf.default" ]; then
         (
-          mv build/${{matrix.target}}/feeds.conf openwrt/
+          mv feeds.conf.default openwrt/
         )
         fi
 
