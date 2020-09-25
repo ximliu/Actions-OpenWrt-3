@@ -15,7 +15,7 @@ git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git package/diy/lu
 
 #使用LEDE的ShadowSocksR Plus+出国软件 (源码自带passwall出国软件)
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/diy/luci-app-ssr-plus
-#svn co https://github.com/fw876/helloworld/trunk/tcping package/diy/tcpping
+svn co https://github.com/fw876/helloworld/trunk/tcping package/diy/tcpping
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/shadowsocksr-libev package/diy/shadowsocksr-libev
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/pdnsd-alt package/diy/pdnsd-alt
 svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/microsocks package/diy/microsocks
